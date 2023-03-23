@@ -1,0 +1,33 @@
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script language="javascript">
+            function kibs() {
+                var seconds = Number(document.getElementById("secs").value);
+                document.getElementById("answer").value=seconds*25*976.5625*0.125;
+            }
+            function kbs() {
+                var seconds = Number(document.getElementById("secs").value);
+                document.getElementById("answer").value=seconds*25*1000*0.125;
+            }
+            function reset() {
+                document.getElementById("answer").value="";
+                document.getElementById("secs").value="";
+                document.getElementById("kib").checked=false;
+                document.getElementById("kb").checked=false;
+            }
+        </script>
+    </head>
+    <body>
+        <form>
+            <p>Aprēķināt cik daudz informācijas var lejuplādēt</p>
+            <p><input type="text" id="secs" onclick="reset();">sekundēs, ja interneta ātrums ir 25 Mbps</p>
+            <p>Atbilde</p>
+            <p><input type="text" id="answer"> <input type="radio" id="kib" name="measureunit" value="KiB" onclick="kibs();"><label for="kib">KiB</label> <input type="radio" id="kb" name="measureunit" value="KB" onclick="kbs();"><label for="kb">KB</label></p>
+        </form>
+    </body>
+</html>
+
